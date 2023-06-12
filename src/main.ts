@@ -1,15 +1,15 @@
 import { serve } from "$std/http/server.ts";
 import { Hono } from "hono/mod.ts";
-import { logger } from "hono/middleware.ts";
+import { cors, logger } from "hono/middleware.ts";
 
 const db = await Deno.openKv();
 const app = new Hono();
 
-app.use("*", logger());
+app.use("*", logger(), cors());
 
 app.get("/", (c) => {
 	return c.text("API deployed using Deno Deploy; Services powered by Deno KV.");
-})
+});
 
 app.get("/views", async (c) => {
 	// Increment views
