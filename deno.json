@@ -1,0 +1,13 @@
+{
+	"imports": {
+		"$std/": "https://deno.land/std@0.191.0/",
+		"hono/": "https://deno.land/x/hono@v3.2.5/"
+	},
+	"tasks": {
+		"start": "deno run --unstable -A src/main.ts",
+		"dev": "deno run -A --unstable --watch=src/ src/main.ts"
+	},
+	"fmt": {
+		"useTabs": true
+	}
+}
